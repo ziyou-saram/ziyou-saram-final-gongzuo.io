@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <!--TailwindCSS-->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!--Flowbite-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+
+    <!--Swiper-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!--DaisyUI-->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.5.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!--Slider-->
+    <style>
+        /* .carousel-container-second {
+  max-width: 100%; 
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel-header-second {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.carousel-controls-second {
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-second {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide-second {
+  width: 1320px; 
+  height: 600px; 
+  margin-right: 15px; 
+  flex: 0 0 auto; 
+}
+
+.carousel-slide-second:last-child {
+  margin-right: 0;
+} */
+    </style>
+</head>
+
+<body>
+    <header class="bg-gray-100 mb-24 lg:mb-16">
+        <nav
+            class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 items-center">
+            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                <div class="flex items-center space-x-7">
+                    <a href="#">
+                        <img src="./img/logo.png" class="h-7 lg:h-10" alt="Flowbite Logo">
+                    </a>
+                    <div class="relative group">
+                        <button id="dropdown-button" class="inline-flex justify-center w-full text-gray-700">
+                            <div class="flex flex-row space-x-1 items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                                </svg>
+
+                                <span class="text-[14px]">Астана</span>
+                            </div>
+                        </button>
+                        <div id="dropdown-menu"
+                            class="hidden absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1">
+                            <!-- Dropdown content goes here -->
+                            <a href="#"
+                                class="block px-4 py-2 text-[14px] text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer rounded-md">Алматы</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                    <div class="flex items-center space-x-8">
+                        <p class="text-[14px]">+7 (747) 120-57-53</p>
+                        <div class="flex flex-row space-x-1 text-[#1D2C49] bg-[#F2F5FA] font-regular rounded-lg px-5 py-2.5 items-center rounded-2xl">
+                            <button type="button" class="text-[14px]">KAZ/RUS</button>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[14px] h-[14px]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+                              </svg>                              
+                        </div>
+                    </div>
+                    <button data-collapse-toggle="navbar-sticky" type="button"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="navbar-sticky" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 1h15M1 7h15M1 13h15" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="items-center space-x-12 hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                    <ul
+                        class="flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                        <li>
+                            <a href="./projects.html" class="block py-2 px-3 text-gray-900 text-[14px]">Проекты</a>
+                        </li>
+                        <li>
+                            <a href="./commerce.html" class="block py-2 px-3 text-gray-900 text-[14px]">Коммерция</a>
+                        </li>
+                        <li>
+                            <a href="./about.html" class="block py-2 px-3 text-gray-900 text-[14px]">О Нас</a>
+                        </li>
+                        <li>
+                            <a href="./blog.html" class="block py-2 px-3 text-gray-900 text-[14px]">Блог</a>
+                        </li>
+                        <li>
+                            <a href="./contacts.html" class="block py-2 px-3 text-gray-900 text-[14px]">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="space-y-16 lg:space-y-20">
+        <!--Banner-->
+        <section class="max-w-full my-8">
+            <div id="default-carousel" class="z-0 relative mb-4 mt-4 hidden lg:block" data-carousel="static">
+                <!-- Carousel wrapper -->
+                <div class="overflow-hidden relative h-56 sm:h-64 xl:h-[600px] 2xl:h-96">
+                    <!-- Item 1 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <span
+                            class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">First
+                            Slide</span>
+                        <img src="./img/tengri_banner.webp"
+                            class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="./img/prime_garden2_banner.jpg"
+                            class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="./img/homeland_banner.jpg"
+                            class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+                    </div>
+                </div>
+                <!-- Slider controls -->
+                <button type="button"
+                    class="flex absolute top-0 left-16 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+                    data-carousel-prev>
+                    <span
+                        class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-[#F2F5FA] dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-5 h-5 text-[#1D2C49] sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                            </path>
+                        </svg>
+                        <span class="hidden">Previous</span>
+                    </span>
+                </button>
+                <button type="button"
+                    class="flex absolute top-0 right-16 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+                    data-carousel-next>
+                    <span
+                        class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-[#F2F5FA] dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-5 h-5 text-[#1D2C49] sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                        <span class="hidden">Next</span>
+                    </span>
+                </button>
+            </div>
+
+            <!--Mobile-->
+            <div class="block lg:hidden">
+                <div class="carousel carousel-center max-w-auto mx-4 space-x-4 rounded-box aspect-square">
+                    <div class="carousel-item w-full">
+                        <img src="https://daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg"
+                            class="w-full aspect-square rounded-box object-cover" />
+                    </div>
+                    <div class="carousel-item w-full">
+                        <img src="https://daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.jpg"
+                            class="w-full aspect-square rounded-box object-cover" />
+                    </div>
+                    <div class="carousel-item w-full">
+                        <img src="https://daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.jpg"
+                            class="w-full aspect-square rounded-box object-cover" />
+                    </div>
+                    <div class="carousel-item w-full">
+                        <img src="https://daisyui.com/images/stock/photo-1494253109108-2e30c049369b.jpg"
+                            class="w-full aspect-square rounded-box object-cover" />
+                    </div>
+                    <div class="carousel-item w-full">
+                        <img src="https://daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.jpg"
+                            class="w-full aspect-square rounded-box object-cover" />
+                    </div>
+                    <div class="carousel-item w-full">
+                        <img src="https://daisyui.com/images/stock/photo-1559181567-c3190ca9959b.jpg"
+                            class="w-full aspect-square rounded-box object-cover" />
+                    </div>
+                    <div class="carousel-item w-full">
+                        <img src="https://daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.jpg"
+                            class="w-full aspect-square rounded-box object-cover" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End of Banner-->
+
+        <!--YouTube Video-->
+        <section class="hidden lg:block max-w-full px-4 lg:px-16 mx-auto my-8">
+            <div class="flex flex-col space-y-8">
+                <div class="space-y-4">
+                    <h1 class="text-[40px] text-[#1D2C49] font-semibold">YouTube видео</h1>
+                    <p class="text-[14px] text-[#8C94A8] font-medium max-w-lg">placerat. at, ac placerat quis efficitur. non. facilisis sollicitudin. lorem. nisi varius ullamcorper convallis. dui lacus vel tempor dui sodales. dolor non </p>
+                </div>
+                <div id="controls-carousel" class="z-0 relative w-full" data-carousel="static">
+                    <!-- Carousel wrapper -->
+                    <div class="relative overflow-hidden rounded-lg h-[600px]">
+                        <!-- Item 1 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <iframe src="https://www.youtube.com/embed/r9jwGansp1E" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."></iframe>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                            <iframe src="https://www.youtube.com/embed/r9jwGansp1E" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."></iframe>
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <iframe src="https://www.youtube.com/embed/r9jwGansp1E" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."></iframe>
+                        </div>
+                    </div>
+                    <!-- Slider controls -->
+                    <button type="button"
+                        class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                        data-carousel-prev>
+                        <span
+                            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 1 1 5l4 4" />
+                            </svg>
+                            <span class="sr-only">Previous</span>
+                        </span>
+                    </button>
+                    <button type="button"
+                        class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                        data-carousel-next>
+                        <span
+                            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="m1 9 4-4-4-4" />
+                            </svg>
+                            <span class="sr-only">Next</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!--Mobile-->
+        <div class="mx-4 space-y-4 block lg:hidden">
+            <div class="flex flex-col space-y-6">
+                <div class="space-y-2">
+                    <h2 class="text-[32px] font-semibold text-[#1D2C49]">YouTube видео</h2>
+                <p class="mt-4 text-[16px] text-[#8C94A8] max-w-full">placerat. at, ac placerat quis efficitur. non.
+                    facilisis
+                    sollicitudin. lorem. nisi varius ullamcorper convallis. dui lacus vel tempor dui sodales.
+                    dolor non
+                </p>
+                </div>
+
+                <div class="carousel carousel-center max-w-auto space-x-4 rounded-box aspect-square">
+                    <div class="carousel-item w-full">
+                        <iframe src="https://www.youtube.com/embed/r9jwGansp1E" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen class="w-full aspect-square rounded-box object-cover"></iframe>
+                    </div>
+                    <div class="carousel-item w-full">
+                        <iframe src="https://www.youtube.com/embed/r9jwGansp1E" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen class="w-full aspect-square rounded-box object-cover"></iframe>
+                    </div>
+                    <div class="carousel-item w-full">
+                        <iframe src="https://www.youtube.com/embed/r9jwGansp1E" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen class="w-full aspect-square rounded-box object-cover"></iframe>
+                    </div>
+                    <div class="carousel-item w-full">
+                        <iframe src="https://www.youtube.com/embed/r9jwGansp1E" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen class="w-full aspect-square rounded-box object-cover"></iframe>
+                    </div>
+                    <div class="carousel-item w-full">
+                        <iframe src="https://www.youtube.com/embed/r9jwGansp1E" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen class="w-full aspect-square rounded-box object-cover"></iframe>
+                    </div>
+                    <div class="carousel-item w-full">
+                        <iframe src="https://www.youtube.com/embed/r9jwGansp1E" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen class="w-full aspect-square rounded-box object-cover"></iframe>
+                    </div>
+                    <div class="carousel-item w-full">
+                        <iframe src="https://www.youtube.com/embed/r9jwGansp1E" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen class="w-full aspect-square rounded-box object-cover"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End of YouTube-->
+
+        <!--CTA-->
+        <section class="max-w-full px-4 lg:px-16 mx-auto my-8">
+            <div class="bg-[#1D2C49] rounded-xl p-8">
+                <div class="flex flex-wrap -mx-4">
+                    <!-- Левая колонка с описанием и формой -->
+                    <div class="w-full space-y-10 md:w-4/12 px-4">
+                        <div class="flex flex-col space-y-5">
+                            <h2 class="tetx-[26px] lg:text-[32px] font-semibold text-[#F2F5FA]">Есть вопросы?</h2>
+                            <p class="tetx-[18px] font-semibold text-[#8C94A8]">Заполните форму для обратной связи и
+                                наши сотрудники с вами свяжутся</p>
+                        </div>
+                        <form class="mt-4">
+                            <div class="mb-4 space-y-2">
+                                <label for="name" class="text-[14px] font-regular text-[#F2F5FA]">Имя</label>
+                                <input type="text" id="name" name="name" placeholder="Имя"
+                                    class="w-full p-2 pl-4 rounded-full text-[14px] text-[#8C94A8]">
+                            </div>
+                            <div class="mb-4 space-y-2">
+                                <label for="name" class="text-[14px] font-regular text-[#F2F5FA]">Номер телефона</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Номер телефона"
+                                    class="w-full p-2 pl-4 rounded-full text-[14px] text-[#8C94A8]">
+                            </div>
+                            <div class="mb-4 space-y-2">
+                                <label for="name" class="text-[14px] font-regular text-[#F2F5FA]">Выбор Жилого
+                                    комплекса</label>
+                                <select id="complex" name="complex"
+                                    class="w-full p-2 pl-4 text-[14px] rounded-full text-[#8C94A8]">
+                                    <option>Выбор Жилого комплекса</option>
+                                    <option>Tengri</option>
+                                    <option>Homeland</option>
+                                    <option>Prime Garden II</option>
+                                </select>
+                            </div>
+                            <button type="submit"
+                                class="w-full mt-6 p-2 bg-[#F2F5FA] text-[14px] font-medium text-[#1D2C49] rounded-full hover:bg-opacity-90">Отправить</button>
+                        </form>
+                    </div>
+
+                    <!-- Правая колонка с изображением -->
+                    <div class="w-full md:w-8/12 px-4 hidden md:block">
+                        <!-- Измерьте высоту левой колонки и установите её для изображения -->
+                        <div class="w-full h-full">
+                            <img src="./img/cta.png" alt="Изображение" class="w-full h-full object-cover rounded-lg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End of CTA-->
+
+        <!--Contacts-->
+        <section class="max-w-full px-4 lg:px-16 mx-auto my-8">
+            <div>
+                <div>
+                    <h1 class="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white">Контакты</h1>
+                </div>
+
+                <div class="grid grid-cols-1 gap-12 mt-10 lg:grid-cols-3">
+                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">
+                        <div class="bg-[#F2F5FA] pt-8 pl-8 pb-16 space-y-5 rounded-xl">
+                            <h2 class="text-lg font-semibold text-[#2A2A30] dark:text-white">Call-center</h2>
+                            <p class="text-xl font-semibold text-[#2A2A30] dark:text-gray-400">+7 747 120 5753</p>
+                        </div>
+
+                        <div class="bg-[#F2F5FA] pt-8 pl-8 pb-16 space-y-5 rounded-xl">
+                            <h2 class="text-lg font-semibold text-[#2A2A30] dark:text-white">Адрес</h2>
+                            <p class="text-xl font-semibold text-[#2A2A30] dark:text-gray-400">пр.Кабанбай батыра, 51
+                                <br>
+                                ЖК Galamat Towers, НП-10
+                            </p>
+                        </div>
+
+                        <div class="bg-[#F2F5FA] pt-8 pl-8 pb-16 space-y-5 rounded-xl">
+                            <h2 class="text-lg font-semibold text-[#2A2A30] dark:text-white">Социальные сети</h2>
+                            <p class="text-xl font-semibold text-[#2A2A30] dark:text-gray-400">Our friendly team is here
+                                to
+                                help.</p>
+                        </div>
+                    </div>
+
+                    <div class="overflow-hidden rounded-xl lg:col-span-2 h-96 lg:h-auto">
+                        <iframe width="100%" height="100%" frameborder="0" title="map" marginheight="0" marginwidth="0"
+                            scrolling="no"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2505.4954531288085!2d71.40230497640427!3d51.099318340433214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4245851f57c6607b%3A0x86947baea78b003a!2z0JbQmiBHYWxhbWF0IHRvd2Vycw!5e0!3m2!1sru!2skz!4v1702935751596!5m2!1sru!2skz"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End of Contacts-->
+
+        <!--Footer-->
+        <footer class="bg-blue-50 max-w-full px-4 lg:px-16 mx-auto pt-8 pb-16">
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <a href="#" target="_blank" class="flex items-center mb-4 sm:mb-0">
+                    <img src="./img/logo.png" class="mr-4 h-8" alt="Flowbite Logo" />
+                </a>
+                <ul class="flex items-start space-x-16 mb-6 sm:mb-0 flex-col lg:flex-row lg:items-center">
+                    <li>
+                        <a href="#" class="text-sm text-gray-500">About</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-sm text-gray-500">Privacy
+                            Policy</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-sm text-gray-500">Licensing</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-sm text-gray-500">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <span class="block text-sm text-gray-500 sm:text-left dark:text-gray-400 pt-16 pb-4">
+                © 2022 <a href="https://flowbite.com" target="_blank" class="hover:underline">Flowbite™</a>. All Rights
+                Reserved.
+            </span>
+        </footer>
+        <!--End of Footer-->
+    </main>
+
+    <!--Flowbite-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!--Navbar Dropdown-->
+    <script>
+        // JavaScript to toggle the dropdown
+        const dropdownButton = document.getElementById('dropdown-button');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+        let isOpen = false; // Set to true to open the dropdown by default
+
+        // Function to toggle the dropdown state
+        function toggleDropdown() {
+            isOpen = !isOpen;
+            dropdownMenu.classList.toggle('hidden', !isOpen);
+        }
+
+        // Set initial state
+        toggleDropdown();
+
+        dropdownButton.addEventListener('click', () => {
+            toggleDropdown();
+        });
+
+        // Add event listener to filter items based on input
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            const items = dropdownMenu.querySelectorAll('a');
+
+            items.forEach((item) => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+    <!--DaisyUI-->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+  let currentIndexSecond = 0;
+  const slidesSecond = document.querySelectorAll('.carousel-slide-second');
+  const singleSlideWidthSecond = 1320; // Width of the slide
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  const carouselContainer = document.querySelector('.carousel-second');
+
+  document.getElementById('nextButtonSecond').addEventListener('click', () => {
+    if (currentIndexSecond < slidesSecond.length - 1) {
+      currentIndexSecond++;
+      updateCarouselSecond();
+    }
+  });
+
+  document.getElementById('previousButtonSecond').addEventListener('click', () => {
+    if (currentIndexSecond > 0) {
+      currentIndexSecond--;
+      updateCarouselSecond();
+    }
+  });
+
+  function updateCarouselSecond() {
+    const offsetSecond = currentIndexSecond * singleSlideWidthSecond;
+    carouselContainer.style.transform = `translateX(-${offsetSecond}px)`;
+  }
+
+  // Touch event listeners
+  carouselContainer.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+  }, false);
+
+  carouselContainer.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].clientX;
+    handleSwipeGesture();
+  }, false);
+
+  function handleSwipeGesture() {
+    if (touchEndX < touchStartX) {
+      // Swiped left
+      if (currentIndexSecond < slidesSecond.length - 1) {
+        currentIndexSecond++;
+        updateCarouselSecond();
+      }
+    }
+    if (touchEndX > touchStartX) {
+      // Swiped right
+      if (currentIndexSecond > 0) {
+        currentIndexSecond--;
+        updateCarouselSecond();
+      }
+    }
+  }
+});
+
+      </script> -->
+</body>
+
+</html>
